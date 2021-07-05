@@ -1,0 +1,273 @@
+.container {
+  display: grid;
+  width: 100%;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr;
+  grid-template-areas: "headers" "egg" "transformBrand" "glass" "standOut" "graph" "photo" "testimonials" "gallery" "footer";
+}
+.animate {
+  transition: all 1s ease-in-out;
+  &:hover {
+    transition: all 1s ease-in-out;
+    background-size: 110%;
+  }
+}
+.header {
+  @include setFigure(700px, url(.././images/mobile/image-header.jpg));
+  @include setFlex(column, unset, unset);
+  padding: 1.5rem;
+  background-position: bottom;
+  grid-area: headers;
+
+  &__menu {
+    @include setFlex(row, space-between, center);
+    position: relative;
+  }
+
+  &__text {
+    @include setFlex(column, flex-end, unset);
+    height: 100%;
+    margin-bottom: 150px;
+    align-items: center;
+    color: $white;
+
+    h1 {
+      margin-bottom: 2rem;
+      font-size: 2.3rem;
+      font-weight: 900;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 0.5rem;
+    }
+  }
+}
+
+.checkbox {
+  display: none;
+}
+.menu {
+  display: none;
+}
+
+#toogle:checked ~ .menu {
+  display: block;
+  position: absolute;
+  list-style: none;
+  left: 0;
+  margin-top: 0.5rem;
+  width: 100%;
+  text-align: center;
+  font-family: $font-barlow;
+  color: $medium-gray;
+
+  li {
+    background-color: $white;
+
+    &:first-child {
+      background-color: transparent;
+    }
+  }
+
+  .item_menu {
+    @include setFlex(row, center, unset);
+    padding-bottom: .5rem;
+
+    .menu_item {
+      width: 103px;
+      height: 50px;
+      @include setFlex(row, center, center);
+
+      &:hover {
+        @include hoverState($yellow, black);
+        padding: 0 4rem;
+      }
+    }
+
+    &:nth-child(2) {
+      padding-top: 1.5rem;
+    }
+    &:nth-child(5) {
+      padding-bottom: 1.5rem;
+    }
+  }
+
+  .triangle {
+    @include setFlex(row, flex-end, unset);
+
+    .decoration {
+      border-style: solid;
+      border-width: 0px 0 25px 25px;
+      border-color: transparent transparent #ffffff transparent;
+      width: 25px;
+      height: 25px;
+    }
+  }
+}
+
+.egg {
+  @include setFigure(400px, url(.././images/mobile/image-transform.jpg));
+  grid-area: egg;
+}
+.glass {
+  @include setFigure(400px, url(.././images/mobile/image-stand-out.jpg));
+  grid-area: glass;
+}
+
+.transformBrand {
+  grid-area: transformBrand;
+  @include setSection();
+
+  .ylw {
+    @include setButton($yellow);
+  }
+}
+
+.standOut {
+  grid-area: standOut;
+  @include setSection();
+
+  .red {
+    @include setButton($soft-red);
+  }
+}
+
+.graph {
+  grid-area: graph;
+  @include setSection();
+  @include setFigure(580px, url(.././images/mobile/image-graphic-design.jpg));
+  @include setFlex(column, flex-end, unset);
+  margin: 0;
+
+  h1 {
+    color: $dark-cyan;
+  }
+  p {
+    color: $dark-cyan;
+    line-height: 1.5rem;
+  }
+}
+
+.photo {
+  grid-area: photo;
+  @include setSection();
+  @include setFigure(580px, url(.././images/mobile/image-photography.jpg));
+  @include setFlex(column, flex-end, unset);
+  margin: 0;
+
+  h1 {
+    color: $cyan;
+  }
+  p {
+    color: $cyan;
+    line-height: 1.5rem;
+  }
+}
+
+.testimonials {
+  grid-area: testimonials;
+  @include setFlex(column, center, center);
+  text-align: center;
+  padding: 1.5rem;
+
+  h1 {
+    color: $light-gray;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 16px;
+    letter-spacing: 0.3rem;
+    margin-bottom: 4rem;
+  }
+}
+
+.card {
+  color: $dark-gray;
+  margin-bottom: 4rem;
+
+  &__avatar {
+    border: 1px solid transparent;
+    border-radius: 85px;
+    width: 20%;
+  }
+
+  &__description {
+    font-family: $font-barlow;
+    padding: 0 10%;
+    font-size: 18px;
+    line-height: 1.8rem;
+    margin: 1.5rem 0;
+  }
+
+  &__name {
+    color: black;
+    margin-bottom: 0.5rem;
+  }
+
+  &__job {
+    font-family: $font-barlow;
+    font-size: 15px;
+    color: $light-gray;
+  }
+}
+
+.gallery {
+  grid-area: gallery;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+
+  img {
+    width: 100%;
+  }
+}
+
+.footer {
+  grid-area: footer;
+  background-color: rgb(144, 212, 197);
+  color: $moderate-cyan;
+
+  &__container {
+    @include setFlex(column, unset, center);
+    padding: 4rem 0;
+
+    .footer_logo {
+      width: 190px;
+    }
+
+    .footer_menu {
+      list-style: none;
+      display: flex;
+      margin-top: 2rem;
+      margin-bottom: 4rem;
+
+      li {
+        margin: 0 1.5rem;
+
+        &:hover {
+          color: $yellow;
+        }
+      }
+    }
+
+    .social {
+      list-style: none;
+      display: flex;
+      margin-bottom: 0rem;
+
+      li {
+        margin: 0 0.5rem;
+      }
+
+      &:hover {
+        color: $yellow;
+      }
+    }
+  }
+}
+
+.transformBrand,
+.glass,
+.standOut,
+.egg {
+  height: 500px;
+  @include setFlex(column, center, unset);
+}

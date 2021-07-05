@@ -1,0 +1,40 @@
+$soft-red: hsl(7, 99%, 70%);
+$yellow: hsl(51, 100%, 49%);
+$dark-cyan : hsl(167, 40%, 24%); //(graphic design text)
+$moderate-cyan: hsl(168, 34%, 41%); //(footer)
+$cyan: hsl(198, 62%, 26%); //(photography text)
+
+$dark-blue: hsl(212, 27%, 19%);
+$dark-gray: hsl(213, 9%, 39%);
+$medium-gray: hsl(232, 10%, 55%);
+$light-gray: hsl(210, 4%, 67%);
+$white: #fff;
+
+$font-barlow: "Barlow", sans-serif;
+$font-fraunces: "Fraunces", serif;
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+html {
+  height: 100%;
+}
+body {
+  font-family: $font-fraunces;
+  font-size: 18px;
+  min-height: 100vh;
+}
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+a {
+  text-decoration: none;
+  color: unset;
+}

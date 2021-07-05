@@ -1,0 +1,102 @@
+@media screen and (min-width: 800px) {
+  .container {
+    display: grid;
+    width: 100%;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "headers headers"
+      "transformBrand egg"
+      "glass standOut"
+      "graph photo"
+      "testimonials testimonials"
+      "gallery gallery"
+      "footer footer";
+  }
+
+  .header {
+    &__text {
+      h1 {
+        font-size: 3rem;
+        margin-bottom: 4rem;
+      }
+    }
+  }
+
+  .nav {
+    font-family: $font-barlow;
+
+    ul {
+      display: flex;
+      list-style: none;
+      text-align: center;
+    }
+
+    li {
+      @include setFlex(row, center, center);
+      color: #fff;
+      padding: 0.8rem 1.8rem;
+      margin-right: 1rem;
+      width: 150px;
+      height: 50px;
+
+      &:hover {
+        @include hoverState($white, black);
+      }
+    }
+  }
+
+  .menu {
+    display: none;
+    .triangle {
+      display: none;
+    }
+  }
+  .toogle,
+  .checkbox {
+    display: none;
+  }
+
+  .transformBrand,
+  .standOut {
+    @include setFlex(column, center, unset);
+    text-align: left;
+    margin: 0;
+    padding: 0 8rem;
+
+    h1 {
+      font-size: 2.5rem;
+    }
+    .ylw {
+      margin: 0;
+    }
+    .red {
+      margin: 0;
+    }
+  }
+
+  .graph,
+  .photo {
+    p {
+      padding: 0 10%;
+    }
+  }
+
+  .card_wrapper {
+    display: flex;
+    align-items: baseline;
+  }
+
+  .gallery {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+  }
+
+  .testimonials {
+    margin: 9rem 0;
+
+    h1 {
+      font-size: 18px;
+    }
+  }
+}

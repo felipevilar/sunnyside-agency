@@ -1,0 +1,65 @@
+@mixin setFlex($dir, $jc, $ai) {
+  display: flex;
+  flex-direction: $dir;
+  justify-content: $jc;
+  align-items: $ai;
+}
+
+@mixin setSection() {
+  text-align: center;
+  padding: 1.5rem;
+  margin: 2rem 0;
+
+  h1 {
+    font-size: 2rem;
+    font-weight: 900;
+  }
+
+  p {
+    font-family: $font-barlow;
+    line-height: 1.7rem;
+    margin: 2rem 0;
+    color: $medium-gray;
+  }
+}
+
+@mixin setButton($color) {
+  display: flex;
+  justify-content: center;
+  width: fit-content;
+  position: relative;
+  text-transform: uppercase;
+  margin: 0 auto;
+
+  &::before {
+    content: "";
+    opacity: 0.2;
+    position: absolute;
+    z-index: -1;
+    width: 135px;
+    top: 15px;
+    left: -8px;
+    border: 6px solid;
+    border-radius: 10px;
+    overflow: visible;
+    border-color: $color;
+  }
+}
+
+@mixin setFigure($h, $background) {
+  background: $background;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: $h;
+  background-size: cover;
+}
+
+@mixin hoverState($background, $color) {
+  font-family: $font-fraunces;
+  font-size: 16px;
+  border: 1px solid transparent;
+  text-transform: uppercase;
+  border-radius: 40px;
+  background-color: $background;
+  color: $color;
+}
